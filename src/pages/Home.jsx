@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 
 import Loader from "../components/Loader";
-import { Nebula } from "../models/Nebula";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
@@ -46,30 +45,68 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
-  const adjustSpaceStationForScreenSize = () => {
-    let screenScale, screenPosition;
-
-    if (window.innerWidth < 768) {
-      screenScale = [1.2, 1.2, 1.2];
-      screenPosition = [0, 0, -30];
-    } else {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, 0, -35];
-    }
-
-    return [screenScale, screenPosition];
-  };
-
   const [planeScale, planePosition] = adjustBiplaneForScreenSize();
-  const [spaceStationScale, spaceStationPosition] = adjustSpaceStationForScreenSize();
 
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero Section with Canvas */}
       <section className="w-full h-screen relative bg-gradient-to-br from-slate-900 via-purple-900 to-black">
-        {/* Info UI */}
-        <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-          {currentStage && <HomeInfo currentStage={currentStage} />}
+        {/* Centered Name and Role */}
+        <div className="absolute inset-0 z-5 flex flex-col items-center justify-center pointer-events-none">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex justify-center"
+          >
+            <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 mb-2 drop-shadow-2xl tracking-wider">
+              {"Palash Mishra".split("").map((letter, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 30, rotateZ: -10 }}
+                  animate={{ opacity: 1, y: 0, rotateZ: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.08,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{
+                    scale: 1.2,
+                    color: "#00ffff",
+                    textShadow: "0 0 20px rgba(0, 255, 255, 0.8)",
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </h1>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative"
+          >
+            <p className="text-lg md:text-3xl text-cyan-300 font-light tracking-widest drop-shadow-lg">
+              FULL STACK DEVELOPER
+            </p>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.6 }}
+            className="mt-8 flex gap-4"
+          >
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <p className="text-sm md:text-base text-cyan-300 tracking-widest">
+              Creative • Innovative • Passionate
+            </p>
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+          </motion.div>
         </div>
 
         <Canvas
@@ -88,14 +125,6 @@ const Home = () => {
             />
 
             <Bird />
-
-            <Nebula
-              position={spaceStationPosition}
-              scale={spaceStationScale}
-              isRotating={isRotating}
-              setIsRotating={setIsRotating}
-              setCurrentStage={setCurrentStage}
-            />
           </Suspense>
         </Canvas>
 
