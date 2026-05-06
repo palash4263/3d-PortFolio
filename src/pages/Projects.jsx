@@ -57,14 +57,6 @@ const Projects = () => {
                 {project.description}
               </p>
               <div className="mt-3 flex items-center gap-1">
-                <Link
-                  to={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-blue-600 text-sm hover:underline"
-                >
-                  Live Link
-                </Link>
                 <img
                   src={arrow}
                   alt="arrow"
