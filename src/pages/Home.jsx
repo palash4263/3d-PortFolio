@@ -3,8 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 
 import Loader from "../components/Loader";
-import { Island } from "../models/Island";
-import Sky from "../models/Sky";
+import { Nebula } from "../models/Nebula";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
@@ -47,34 +46,34 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
-  const adjustIslandForScreenSize = () => {
+  const adjustSpaceStationForScreenSize = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [1.2, 1.2, 1.2];
+      screenPosition = [0, 0, -30];
     } else {
-      screenScale = [1.3, 1.3, 1.3];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, 0, -35];
     }
 
     return [screenScale, screenPosition];
   };
 
   const [planeScale, planePosition] = adjustBiplaneForScreenSize();
-  const [islandScale, islandPosition] = adjustIslandForScreenSize();
+  const [spaceStationScale, spaceStationPosition] = adjustSpaceStationForScreenSize();
 
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero Section with Canvas */}
-      <section className="w-full h-screen relative">
+      <section className="w-full h-screen relative bg-gradient-to-br from-slate-900 via-purple-900 to-black">
         {/* Info UI */}
         <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
           {currentStage && <HomeInfo currentStage={currentStage} />}
         </div>
 
         <Canvas
-          className={`w-full h-screen bg-transparent ${
+          className={`w-full h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-black ${
             isRotating ? "cursor-grabbing" : "cursor-grab"
           }`}
           camera={{ near: 0.1, far: 1000, position: [0, 0, 20] }}
@@ -89,11 +88,10 @@ const Home = () => {
             />
 
             <Bird />
-            <Sky isRotating={isRotating} />
 
-            <Island
-              position={islandPosition}
-              scale={islandScale}
+            <Nebula
+              position={spaceStationPosition}
+              scale={spaceStationScale}
               isRotating={isRotating}
               setIsRotating={setIsRotating}
               setCurrentStage={setCurrentStage}
