@@ -6,7 +6,7 @@ import Fox from '../models/Fox'
 import Loader from '../components/Loader'
 import Alert from '../components/Alert'
 import Footer from '../components/Footer'
-
+import useAlert from '../hooks/useAlert'
 const Contact = () => {
  const formRef = useRef(null)
  const[form,setForm] =  useState({name:'',email:'',message:''})
