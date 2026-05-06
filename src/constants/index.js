@@ -113,4 +113,36 @@ export const projects = [
       "Developed a dynamic frontend with real-time API integration for crypto data visualization. Built reusable UI components with responsive design and optimized client-side performance.",
     link: "https://your-live-link.com",
   },
+  {
+    iconUrl: threads,
+    theme: "bg-gradient-to-r from-orange-400 to-red-500",
+    name: "Threads Clone",
+    description:
+      "Full-stack social media application with real-time messaging, user authentication, and MongoDB database. Implemented JWT tokens, socket.io for live updates, and responsive UI with React.",
+    link: "https://your-live-link.com",
+  },
+  {
+    iconUrl: snapgram,
+    theme: "bg-gradient-to-r from-green-400 to-blue-500",
+    name: "Snapgram",
+    description:
+      "Instagram-inspired app with image upload, infinite scroll, user profiles, and likes/comments system. Built with React, Firebase, and Tailwind CSS for a modern mobile-first experience.",
+    link: "https://your-live-link.com",
+  },
+  {
+    iconUrl: summiz,
+    theme: "bg-gradient-to-r from-yellow-400 to-orange-500",
+    name: "AI Summarizer",
+    description:
+      "AI-powered article summarizer using OpenAI API. Features include URL input, saved summaries, responsive design, and seamless integration with external APIs for intelligent content extraction.",
+    link: "https://your-live-link.com",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "bg-gradient-to-r from-indigo-500 to-purple-600",
+    name: "PriceWise",
+    description:
+      "E-commerce price tracking application with web scraping, real-time price monitoring, and email notifications. Built with Node.js backend and React frontend for optimal user experience.",
+    link: "https://your-live-link.com",
+  },
 ];
