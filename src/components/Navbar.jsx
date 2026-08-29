@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4">
-      
+    <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-3 bg-[#0a0a0c]/80 backdrop-blur-xl border-b border-white/10">
+
       {/* Logo */}
       <NavLink
         to="/"
-        className="w-10 h-10 rounded-lg bg-white flex items-center justify-center font-bold shadow-md"
+        className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 via-fuchsia-500 to-purple-500 flex items-center justify-center font-bold shadow-md shadow-fuchsia-500/30"
       >
-        <p className="blue-gradient_text">PM</p>
+        <p className="text-white">PM</p>
       </NavLink>
 
       {/* Navigation */}
@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? 'text-blue-500' : 'text-white'
+            `transition-colors ${isActive ? 'text-cyan-300' : 'text-white/90 hover:text-cyan-300'}`
           }
         >
           About
@@ -27,7 +27,7 @@ const Navbar = () => {
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            isActive ? 'text-blue-500' : 'text-white'
+            `transition-colors ${isActive ? 'text-cyan-300' : 'text-white/90 hover:text-cyan-300'}`
           }
         >
           Projects

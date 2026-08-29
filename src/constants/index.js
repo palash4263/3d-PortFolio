@@ -103,6 +103,9 @@ export const projects = [
     name: "Movie Fetcher",
     description:
       "Built a scalable backend using Java, Spring Boot, REST APIs, and SQL. Implemented validation, exception handling, and optimized queries with filtering and sorting for high performance.",
+    tags: ["Java", "Spring Boot", "REST API", "SQL"],
+    // Drop a screenshot in src/assets/images and import it here
+    image: null,
     link: "https://your-live-link.com",
   },
   {
@@ -111,6 +114,8 @@ export const projects = [
     name: "Crypto-X",
     description:
       "Developed a dynamic frontend with real-time API integration for crypto data visualization. Built reusable UI components with responsive design and optimized client-side performance.",
+    tags: ["React", "REST API", "Charts", "Tailwind"],
+    image: null,
     link: "https://your-live-link.com",
   },
   {
@@ -118,7 +123,9 @@ export const projects = [
     theme: "bg-gradient-to-r from-orange-400 to-red-500",
     name: "Threads Clone",
     description:
-      "Full-stack social media application with real-time messaging, user authentication, and MongoDB database. Implemented JWT tokens, socket.io for live updates, and responsive UI with React.",
+      "Full-stack social media app with real-time messaging and authentication. Built on MongoDB with JWT auth and socket.io for live updates.",
+    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
+    image: null,
     link: "https://your-live-link.com",
   },
   {
@@ -127,6 +134,8 @@ export const projects = [
     name: "Snapgram",
     description:
       "Instagram-inspired app with image upload, infinite scroll, user profiles, and likes/comments system. Built with React, Firebase, and Tailwind CSS for a modern mobile-first experience.",
+    tags: ["React", "Firebase", "Tailwind"],
+    image: null,
     link: "https://your-live-link.com",
   },
   {
@@ -135,6 +144,8 @@ export const projects = [
     name: "AI Summarizer",
     description:
       "AI-powered article summarizer using OpenAI API. Features include URL input, saved summaries, responsive design, and seamless integration with external APIs for intelligent content extraction.",
+    tags: ["React", "OpenAI API", "Redux"],
+    image: null,
     link: "https://your-live-link.com",
   },
   {
@@ -143,6 +154,8 @@ export const projects = [
     name: "PriceWise",
     description:
       "E-commerce price tracking application with web scraping, real-time price monitoring, and email notifications. Built with Node.js backend and React frontend for optimal user experience.",
+    tags: ["Next.js", "Node.js", "MongoDB", "Cheerio"],
+    image: null,
     link: "https://your-live-link.com",
   },
 ];
